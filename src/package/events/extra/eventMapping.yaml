@@ -1,0 +1,40 @@
+haptics:
+  sharp_collision:
+    DEFAULT: knock
+    MX Master 4: sharp_collision
+
+  damp_collision:
+    DEFAULT: knock
+    MX Master 4: damp_collision
+
+  subtle_collision:
+    DEFAULT: knock
+    MX Master 4: subtle_collision
+
+  sharp_state_change:
+    DEFAULT: knock
+    MX Master 4: sharp_state_change
+
+  damp_state_change:
+    DEFAULT: knock
+    MX Master 4: damp_state_change
+
+  completed:
+    DEFAULT: knock
+    MX Master 4: completed
+
+  angry_alert:
+    DEFAULT: knock
+    MX Master 4: angry_alert
+
+  happy_alert:
+    DEFAULT: knock
+    MX Master 4: happy_alert
+
+  knock:
+    DEFAULT: knock
+    MX Master 4: knock
+
+  ringing:
+    DEFAULT: knock
+    MX Master 4: ringing

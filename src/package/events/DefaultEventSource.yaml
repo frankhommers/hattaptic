@@ -1,0 +1,43 @@
+displayName: Haptic Events
+description: HTTP-triggered haptic events for MX Master 4
+
+events:
+  - name: sharp_collision
+    displayName: Sharp Collision
+    description: Sharp, precise collision feedback
+
+  - name: damp_collision
+    displayName: Damp Collision
+    description: Dampened collision feedback
+
+  - name: subtle_collision
+    displayName: Subtle Collision
+    description: Subtle, light collision feedback
+
+  - name: sharp_state_change
+    displayName: Sharp State Change
+    description: Sharp state change confirmation
+
+  - name: damp_state_change
+    displayName: Damp State Change
+    description: Dampened state change confirmation
+
+  - name: completed
+    displayName: Completed
+    description: Task completion feedback
+
+  - name: angry_alert
+    displayName: Angry Alert
+    description: Strong warning/alert feedback
+
+  - name: happy_alert
+    displayName: Happy Alert
+    description: Positive notification feedback
+
+  - name: knock
+    displayName: Knock
+    description: Simple knock feedback
+
+  - name: ringing
+    displayName: Ringing
+    description: Ringing notification feedback

@@ -1,0 +1,20 @@
+type: plugin4
+name: HaTTaPtic
+displayName: HaTTaPtic
+description: HTTP-triggered haptic feedback for Logitech MX Master 4. Send a GET request, the mouse vibrates.
+pluginFileName: HaTTaPticPlugin.dll
+version: 1.0
+author: HaTTaPtic
+
+pluginFolderMac: bin
+pluginFolderWin: bin
+
+supportedDevices: []
+
+pluginCapabilities:
+    - HasHapticMapping
+
+minimumLoupedeckVersion: 6.0
+
+license: MIT
+licenseUrl: https://opensource.org/licenses/MIT

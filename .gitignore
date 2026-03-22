@@ -1,0 +1,61 @@
+# Build outputs
+bin/
+obj/
+out/
+
+# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.idea/
+*.swp
+*~
+
+# macOS
+.DS_Store
+._*
+
+# .NET
+*.dll
+*.exe
+*.pdb
+*.cache
+*.nupkg
+project.lock.json
+
+# Exception: Logi Options+ runtime DLLs (synced via scripts/sync-libs.sh)
+!lib/*.dll
+
+# NuGet
+packages/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Plugin packages (generated)
+*.lplug4
+
+# Logs
+*.log
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Build staging (PluginApi.dll copy)
+.build/
+
+# Git worktrees
+.worktrees/
+
+# Agent session logs
+.agent-session-logs/
