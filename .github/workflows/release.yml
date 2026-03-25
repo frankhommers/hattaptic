@@ -19,6 +19,9 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Install LogiPluginTool
+        run: dotnet tool install --global LogiPluginTool
+
       - name: Restore
         run: dotnet restore src/HaTTaPticPlugin.csproj -p:PluginApiDir=${{ github.workspace }}/lib/
 
@@ -26,9 +29,10 @@ jobs:
         run: dotnet build src/HaTTaPticPlugin.csproj -c Release -p:PluginApiDir=${{ github.workspace }}/lib/ -p:SkipPostBuild=true --no-restore
 
       - name: Package .lplug4
-        run: |
-          cd bin/Release
-          zip -r ${{ github.workspace }}/HaTTaPtic.lplug4 . -x "*.pdb"
+        run: logiplugintool pack ./bin/Release/ ./HaTTaPtic.lplug4
+
+      - name: Verify .lplug4
+        run: logiplugintool verify ./HaTTaPtic.lplug4
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

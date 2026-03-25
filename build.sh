@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # HaTTaPtic Build Script
-# Builds the plugin in Docker and creates a .lplug4 package
+# Builds the plugin in Docker and creates a .lplug4 package using logiplugintool
 
 set -e
 
@@ -37,21 +37,17 @@ fi
 echo ""
 echo "Using PluginApi version: $(cat lib/.pluginapi-version 2>/dev/null || echo 'unknown')"
 
-# Build with Docker
+# Build with Docker (includes logiplugintool pack + verify)
 echo ""
 echo "Building in Docker..."
 docker build --no-cache --target output --output "type=local,dest=./bin/$CONFIG" -f Dockerfile .
 
+# Move .lplug4 from Docker output to project root
+mv "bin/$CONFIG/$PLUGIN_NAME.lplug4" "$SCRIPT_DIR/$PLUGIN_NAME.lplug4"
+
 echo ""
 echo "Build complete!"
-echo ""
-
-# Create .lplug4 package (it's just a zip)
-echo "Creating plugin package..."
-cd "bin/$CONFIG/output"
-zip -r "$SCRIPT_DIR/$PLUGIN_NAME.lplug4" . -x "*.pdb"
-cd "$SCRIPT_DIR"
-echo "  -> $PLUGIN_NAME.lplug4"
+echo "  -> $PLUGIN_NAME.lplug4 (packaged with logiplugintool)"
 
 # Install: create link file for development
 echo ""
